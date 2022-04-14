@@ -46,7 +46,7 @@ public class Validator {
   }
 
   
-  public static void checkSubgrids(int subgridNumber) {
+  public static void checkSubgrid(int subgridNumber) {
     int[] subgrid = new int[9];
     for (int row = 0; row < 3; row++) {
       for (int col = 0; col < 3; col++) {
