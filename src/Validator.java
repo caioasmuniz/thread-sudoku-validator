@@ -59,22 +59,19 @@ public class Validator {
   // operation = 0 checkRow
   // operation = 1 checkColumn
   // operation = 2 checkSubgrid
-  public synchronized static void validate(int operation) {
-    for (int i = 0; i < 9; i++) {
+  public synchronized static void validate(int operation, int index) {
       switch (operation) {
         case 0:
-          checkRow(i);
+          checkRow(index);
           break;
         case 1:
-          checkColumn(i);
+          checkColumn(index);
           break;
         case 2:
-          checkSubgrid(i);
+          checkSubgrid(index);
           break;
       }
     }
-  }
-  
   public static boolean isValid(){
     return valid;
   }
