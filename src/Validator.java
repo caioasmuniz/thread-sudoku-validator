@@ -55,7 +55,7 @@ public class Validator {
     }
     valid = validateArray(subgrid);
   }
-  //validate a Row/Colmun/Subgrid from the sudoku using the checkRow/Colmun/Subgrid methods
+  //validate a Row/Column/Subgrid from the sudoku using the checkRow/Column/Subgrid methods
   // operation = 0 checkRow
   // operation = 1 checkColumn
   // operation = 2 checkSubgrid
