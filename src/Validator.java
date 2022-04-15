@@ -45,7 +45,15 @@ public class Validator {
     valid = validateArray(column);
   }
 
-  
+// Disposition of the subgrids:
+// 0 1 2
+// 3 4 5
+// 6 7 8
+// Coordinates from each subgrid's first element (top left)
+// sub 0-[0][0]   sub 1-[3][0]    sub 2-[6][0]
+// sub 3-[0][3]   sub 4-[3][3]    sub 5-[6][3]
+// sub 6-[0][6]   sub 7-[3][6]    sub 8-[6][6]
+
   public static void checkSubgrid(int subgridNumber) {
     int[] subgrid = new int[9];
     for (int row = 0; row < 3; row++) {
