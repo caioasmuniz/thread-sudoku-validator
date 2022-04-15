@@ -10,21 +10,17 @@ public class ThreadValidator extends Thread {
   @Override
   public void run() {
     Validator.validate(operation, index);
-    if (Validator.isValid())
-      System.out.print("O sudoku eh valido ");
-    else
-      System.out.print("O sudoku NAO eh valido ");
-    switch (operation) {
-      case 0:
-        System.out.print("na linha ");
-        break;
-      case 1:
-        System.out.print("na coluna ");
-        break;
-      case 3:
-        System.out.print("no subgrid ");
-        break;
-    }
-    System.out.print(index + 1);
+    if (!Validator.isValid())
+      switch (operation) {
+        case 0:
+          System.out.println("Invalido na linha " + (index + 1));
+          break;
+        case 1:
+          System.out.println("Invalido  na coluna " + (index + 1));
+          break;
+        case 3:
+          System.out.println("Invalido no subgrid " + (index + 1));
+          break;
+      }
   }
 }
