@@ -1,12 +1,14 @@
 public class Main {
   public static void main(String[] args) throws InterruptedException {
-    ThreadValidator[] workers = new ThreadValidator[27];
+    ThreadValidator[][] workers = new ThreadValidator[3][9];
 
     for (int operation = 0; operation < 3; operation++)
       for (int index = 0; index < 9; index++)
-        workers[operation * 3 + index] = new ThreadValidator(operation, index);
+        workers[operation][index] = new ThreadValidator(operation, index);
 
-    for (int i = 0; i < workers.length; i++)
-      workers[i].start();
+    for (int operation = 0; operation < 3; operation++)
+      for (int index = 0; index < 9; index++)
+        workers[operation][index].start();
+    ;
   }
 }
