@@ -16,9 +16,9 @@ public class ThreadValidator extends Thread {
           System.out.println("Invalido na linha " + (index + 1));
           break;
         case 1:
-          System.out.println("Invalido  na coluna " + (index + 1));
+          System.out.println("Invalido na coluna " + (index + 1));
           break;
-        case 3:
+        case 2:
           System.out.println("Invalido no subgrid " + (index + 1));
           break;
       }

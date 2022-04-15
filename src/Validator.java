@@ -15,18 +15,18 @@ public class Validator {
   // checks if each element is "sudoku-valid" (numbers from 1-9 non repeatable)
   private static boolean validateArray(int array[]) {
     boolean found = false;
-    for (int i = 0; i < 9; i++) {
-      for (int j = 0; j < 9; j++) {
-        if (array[j] == i) {
+    for (int digit = 1; digit <= 9; digit++) {
+      for (int index = 0; index < 9; index++) {
+        if (array[index] == digit) {
           if (found)
             return false;
           else
             found = true;
         }
-        if (!found)
-          return false;
-        found = false;
       }
+      if (!found)
+        return false;
+      found = false;
     }
     return true;
   }
@@ -58,9 +58,10 @@ public class Validator {
     int[] subgrid = new int[9];
     for (int row = 0; row < 3; row++) {
       for (int col = 0; col < 3; col++) {
-        subgrid[row * 3 + col] = sudoku[(subgridNumber % 3) * 3 + row][(subgridNumber / 3) * 3 + col];
+        subgrid[row * 3 + col] = sudoku[(subgridNumber / 3) * 3 + row][(subgridNumber % 3) * 3 + col];
       }
     }
+
     valid = validateArray(subgrid);
   }
 
